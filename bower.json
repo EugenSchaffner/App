@@ -1,0 +1,23 @@
+{
+  "name": "App",
+  "version": "0.0.0",
+  "homepage": "https://github.com/EugenSchaffner/App",
+  "authors": [
+    "EugenSchaffner <es056@hdm-stuttgart.de>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
