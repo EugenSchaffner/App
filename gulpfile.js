@@ -4,7 +4,6 @@
 // Call Plugins
 var env        = require('minimist')(process.argv.slice(2)),
 	gulp       = require('gulp'),
-	jade       = require('gulp-jade'),
 	uglify     = require('gulp-uglify'),
 	compass    = require('gulp-compass'),
 	concat     = require('gulp-concat'),
@@ -14,13 +13,7 @@ var env        = require('minimist')(process.argv.slice(2)),
 	modRewrite = require('connect-modrewrite'),
 	imagemin   = require('gulp-imagemin');
 
-// Call Jade for compile Templates
-gulp.task('jade', function(){
-	return gulp.src('src/templates/*.jade')
-		.pipe(jade({pretty: !env.p }))
-		.pipe(gulp.dest('build/'))
-		.pipe(connect.reload());
-});
+
 
 // Call Uglify and Concat JS
 gulp.task('js', function(){
@@ -54,7 +47,7 @@ gulp.task('imagemin', function() {
 
 // Call Watch
 gulp.task('watch', function(){
-	gulp.watch('src/templates/**/*.jade', ['jade']);
+	
 	gulp.watch('src/sass/**/*.scss', ['compass']);
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
@@ -77,4 +70,4 @@ gulp.task('connect', function() {
 });
 
 // Default task
-gulp.task('default', ['js', 'jade', 'compass', 'imagemin', 'watch', 'connect']);
+gulp.task('default', ['js',  'compass', 'imagemin', 'watch', 'connect']);
